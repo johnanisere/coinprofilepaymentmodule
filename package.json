@@ -1,0 +1,39 @@
+{
+  "name": "coinprofilemodule",
+  "version": "1.0.0",
+  "description": "Coinprofile Payment Gateway Module",
+  "main": "build/index.js",
+  "repository": "https://github.com/johnanisere/coinprofilepaymentmodule.git",
+  "author": "coinprofile",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "webpack": "^4.41.2",
+    "zoid": "^9.0.36"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "webpack-cli": "^3.3.10"
+  },
+  "keywords": [
+    "coinprofile",
+    "react-coinprofile",
+    "coinprofile payment gateway",
+    "payment",
+    "gateway"
+  ]
+}
