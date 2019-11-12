@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import * as zoid from 'zoid/dist/zoid.frameworks';
 
 const Widget = zoid.create({
-  tag: 'coinprofile-payment-module',
-  url: 'https://staging.paymentgateway.coinprofile.co/',
+  tag: 'payment-widget',
+  url: 'http://localhost:3000',
   dimensions: {
     width: '100%',
     height: '100%',
@@ -16,7 +16,15 @@ const PayWidget = Widget.driver('react', {
   ReactDom: ReactDOM,
 });
 
-function CoinPay({ amount, publicKey, email, buttontext, className }) {
+function CoinPay({
+  amount,
+  publicKey,
+  email,
+  buttontext,
+  className,
+  callBack,
+  disable,
+}) {
   const [showPayment, setShowPayment] = useState(false);
 
   function showPaymentHandler() {
@@ -37,10 +45,13 @@ function CoinPay({ amount, publicKey, email, buttontext, className }) {
             email={email}
             closePayment={closePaymentHandler}
             className={className}
+            callback={callBack}
           />
         </div>
       ) : null}
-      <button onClick={showPaymentHandler}>{buttontext}</button>
+      <button onClick={showPaymentHandler} disabled={disable}>
+        {buttontext}
+      </button>
     </div>
   );
 }
