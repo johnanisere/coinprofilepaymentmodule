@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import * as zoid from 'zoid/dist/zoid.frameworks';
 
 const Widget = zoid.create({
-  tag: 'payment-widget',
-  url: 'http://localhost:3000',
+  tag: 'payment-widget', //Same tag would be used in the child component
+  url: 'http://localhost:3000', //The route that should first display on iframe
   dimensions: {
+    //The default size the widget should display in
     width: '100%',
     height: '100%',
   },
@@ -13,7 +14,7 @@ const Widget = zoid.create({
 
 const PayWidget = Widget.driver('react', {
   React: React,
-  ReactDom: ReactDOM,
+  ReactDOM: ReactDOM,
 });
 
 function CoinPay({
@@ -22,8 +23,8 @@ function CoinPay({
   email,
   buttontext,
   className,
-  callBack,
   disable,
+  callBack,
 }) {
   const [showPayment, setShowPayment] = useState(false);
 
