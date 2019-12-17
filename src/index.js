@@ -25,6 +25,9 @@ function CoinPay({
   className,
   disable,
   callBack,
+  username,
+  decimals,
+  currency,
 }) {
   const [showPayment, setShowPayment] = useState(false);
 
@@ -44,6 +47,9 @@ function CoinPay({
             amount={amount}
             coinprofileKey={publicKey}
             email={email}
+            username={username}
+            currency={currency}
+            decimals={decimals}
             closePayment={closePaymentHandler}
             className={className}
             callback={callBack}
