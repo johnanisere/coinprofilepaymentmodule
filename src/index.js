@@ -35,6 +35,7 @@ const Widget = zoid.create({
               left: 0;
               right: 0;
               overflow-y: hidden;
+              z-index:3000000000
             }
             iframe{
               width:100%;
@@ -69,6 +70,10 @@ const Widget = zoid.create({
     },
     selectedCurrency: {
       type: "string",
+      required: false
+    },
+    onFinalise: {
+      type: "function",
       required: false
     }
   }

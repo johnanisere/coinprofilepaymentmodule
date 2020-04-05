@@ -1,6 +1,6 @@
 {
   "name": "coinprofile",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "Coinprofile Payment Gateway",
   "main": "build/index.js",
   "repository": "https://github.com/johnanisere/coinp.git",
@@ -15,10 +15,7 @@
     "react": "^16.11.0"
   },
   "dependencies": {
-    "jest": "^24.9.0",
     "jsx-pragmatic": "^2.0.8",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
     "webpack": "^4.41.2",
     "zoid": "^9.0.36"
   },
