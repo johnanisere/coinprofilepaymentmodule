@@ -1,8 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import * as zoid from "zoid/dist/zoid.frame.min";
+import { node, dom } from "jsx-pragmatic";
 
-const widget = zoid.create({
+const Widget = zoid.create({
   tag: "coinprofile-payment-gateway", //Same tag would be used in the child component
   dimensions: {
     //The default size the widget should display in
@@ -15,6 +14,37 @@ const widget = zoid.create({
       production: "https://my-site.com/login",
       test: "mock://www.my-site.com/base/test/windows/login/index.htm"
     }[props.env];
+  },
+  containerTemplate: function containerTemplate({
+    uid,
+    doc,
+    frame,
+    prerenderFrame
+  }) {
+    return node(
+      "div",
+      { id: uid, class: "container" },
+      node(
+        "style",
+        null,
+        `
+            #${uid}.container {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              overflow-y: hidden;
+            }
+            iframe{
+              width:100%;
+              height:100%;
+            }
+        `
+      ),
+      node("node", { el: frame }),
+      node("node", { el: prerenderFrame })
+    ).render(dom({ doc }));
   },
   props: {
     env: {
@@ -44,9 +74,4 @@ const widget = zoid.create({
   }
 });
 
-export default widget;
-
-export const PayWidget = widget.driver("react", {
-  React: React,
-  ReactDOM: ReactDOM
-});
+export default Widget;
