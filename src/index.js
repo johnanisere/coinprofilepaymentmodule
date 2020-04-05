@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import * as zoid from "zoid/dist/zoid.frame.min";
 
 const widget = zoid.create({
@@ -43,3 +45,8 @@ const widget = zoid.create({
 });
 
 export default widget;
+
+export const PayWidget = widget.driver("react", {
+  React: React,
+  ReactDOM: ReactDOM
+});
