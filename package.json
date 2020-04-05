@@ -1,9 +1,9 @@
 {
-  "name": "coinprofilemodule",
+  "name": "coinprofile",
   "version": "1.0.5",
   "description": "Coinprofile Payment Gateway Module",
   "main": "build/index.js",
-  "repository": "https://github.com/johnanisere/coinprofilepaymentmodule.git",
+  "repository": "https://github.com/johnanisere/coinp.git",
   "author": "coinprofile",
   "license": "MIT",
   "scripts": {
