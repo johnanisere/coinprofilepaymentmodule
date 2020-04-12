@@ -6,20 +6,21 @@ const Widget = zoid.create({
   dimensions: {
     //The default size the widget should display in
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   url: ({ props }) => {
     return {
       dev: "http://localhost:3004",
+      staging: "https://staging.paymentgateway.coinprofile.co/",
       production: "https://my-site.com/login",
-      test: "mock://www.my-site.com/base/test/windows/login/index.htm"
+      test: "mock://www.my-site.com/base/test/windows/login/index.htm",
     }[props.env];
   },
   containerTemplate: function containerTemplate({
     uid,
     doc,
     frame,
-    prerenderFrame
+    prerenderFrame,
   }) {
     return node(
       "div",
@@ -50,33 +51,37 @@ const Widget = zoid.create({
   props: {
     env: {
       type: "string",
-      default: () => "production"
+      default: () => "production",
     },
     username: {
       type: "string",
-      required: true
+      required: true,
     },
     amount: {
       type: "number",
-      required: true
+      required: true,
     },
     currency: {
       type: "string",
-      required: true
+      required: true,
     },
     email: {
       type: "string",
-      required: true
+      required: true,
     },
     selectedCurrency: {
       type: "string",
-      required: false
+      required: false,
+    },
+    transactionId: {
+      type: "string",
+      required: false,
     },
     onFinalise: {
       type: "function",
-      required: false
-    }
-  }
+      required: false,
+    },
+  },
 });
 
 export default Widget;
