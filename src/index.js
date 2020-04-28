@@ -12,7 +12,7 @@ const Widget = zoid.create({
     return {
       dev: "http://localhost:3004",
       staging: "https://staging.paymentgateway.coinprofile.co/",
-      production: "https://my-site.com/login",
+      production: "https://paymentgateway.coinprofile.co/",
       test: "mock://www.my-site.com/base/test/windows/login/index.htm",
     }[props.env];
   },
