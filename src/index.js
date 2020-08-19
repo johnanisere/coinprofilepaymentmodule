@@ -34,7 +34,8 @@ const Widget = zoid.create({
               bottom: 0;
               left: 0;
               right: 0;
-              overflow-y: hidden;
+              overflow: auto;
+              -webkit-overflow-scrolling: touch;
               z-index:3000000000
             }
             iframe{
